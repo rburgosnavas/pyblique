@@ -13,6 +13,13 @@ def load():
     oblique.close()
     return oblique_list
 
+def drop():
+    conn = sql.connect('oblique.db')
+    cursor = conn.cursor()
+    cursor.execute("drop table strategies")
+    conn.commit()
+    cursor.close()
+
 def create():
     conn = sql.connect('oblique.db')
     cursor = conn.cursor()
